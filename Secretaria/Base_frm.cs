@@ -142,7 +142,7 @@ namespace Secretaria
                 this.Cursor = Cursors.WaitCursor;
 
 
-                Boletins bol = new Boletins(Convert.ToInt32(dt.Rows[contador -1].Cells["CodAluno"].Value.ToString()));
+                Boletins bol = new Boletins(Convert.ToInt32(dt.Rows[contador -1].Cells["CodAluno"].Value.ToString()), int.Parse(txtAno.Text));
 
                 bol.ShowDialog();
 

@@ -174,14 +174,14 @@ SELECT TOP 1000
             }
 
         }
-        public void SelectPeloId(DataTable tabela, int id)
+        public void SelectPeloId(DataTable tabela, int id, int _ano)
         {
             try
             {
                 SqlConnection con = new SqlConnection(conexao());
                 SqlCommand comando = new SqlCommand();
                 comando.Connection = con;
-                comando.CommandText = strSelect + " where tbl_bimestre.id_Aluno = " + id  + final;
+                comando.CommandText = string.Format("{0}  where tbl_bimestre.id_Aluno =  {1} and tbl_bimestre.ano = {2} {3}",strSelect, id,_ano,final);
                 SqlDataAdapter adp = new SqlDataAdapter(comando);
                 adp.Fill(tabela);
 

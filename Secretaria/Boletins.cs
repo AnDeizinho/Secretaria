@@ -18,11 +18,11 @@ namespace Secretaria
         BaseSelectBimestre bimestre = new BaseSelectBimestre();
         bool cont = true;
        
-        public Boletins(int idaluno)
+        public Boletins(int idaluno, int _ano)
         {
 
             id_aluno = idaluno;
-            bimestre.SelectPeloId(tbl, id_aluno);
+            bimestre.SelectPeloId(tbl, id_aluno, _ano);
             InitializeComponent();
             
 
